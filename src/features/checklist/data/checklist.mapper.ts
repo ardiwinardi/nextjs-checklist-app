@@ -1,3 +1,4 @@
+import { stringToDate } from '@/shared/utils/date.util';
 import { Checklist } from '../domain/checklist.entity';
 import { ChecklistDTO } from './checklist.dto';
 
@@ -6,7 +7,7 @@ export const checklistDtoToEntity = (dto: ChecklistDTO): Checklist => {
     id: dto.id ?? '',
     name: dto.name ?? '',
     isDone: dto.isDone ?? false,
-    createdAt: dto.createdAt ?? new Date(),
-    updatedAt: dto.updatedAt ?? new Date(),
+    createdAt: stringToDate(dto.createdAt),
+    updatedAt: stringToDate(dto.createdAt),
   };
 };

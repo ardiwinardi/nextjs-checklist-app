@@ -2,8 +2,8 @@ export interface ChecklistDTO {
   id?: string;
   name?: string;
   isDone?: boolean;
-  createdAt?: Date;
-  updatedAt?: Date;
+  createdAt?: string;
+  updatedAt?: string;
 }
 
 export interface ChecklistCreateDTO {
