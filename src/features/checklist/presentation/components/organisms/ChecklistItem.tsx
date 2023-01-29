@@ -109,7 +109,7 @@ export default function ChecklistItem(props: Props) {
       </div>
 
       {!props.isEditing && (
-        <div className="group-hover:opacity-100 opacity-0">
+        <div className="group-hover:opacity-100 lg:opacity-0">
           <Button
             color="transparent"
             onClick={() => deleteController.mutate(props.item)}
