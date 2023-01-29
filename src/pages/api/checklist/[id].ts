@@ -1,5 +1,4 @@
 import ChecklistCookieModel from '@/features/checklist/data/checklist.cookie.model';
-import sleep from '@/shared/utils/sleep.util';
 import Cookies from 'cookies';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -10,8 +9,6 @@ export default async function handler(
   const { method, query, body } = req;
   const cookies = new Cookies(req, res);
   const checklistModel = new ChecklistCookieModel(cookies);
-
-  await sleep();
 
   if (method === 'PUT') {
     checklistModel.findByIdAndUpdate(query.id as string, body);

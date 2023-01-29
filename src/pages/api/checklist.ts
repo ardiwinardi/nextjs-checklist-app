@@ -1,6 +1,5 @@
 import ChecklistCookieModel from '@/features/checklist/data/checklist.cookie.model';
 import { Checklist } from '@/features/checklist/domain/checklist.entity';
-import sleep from '@/shared/utils/sleep.util';
 import Cookies from 'cookies';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
@@ -19,8 +18,6 @@ export default async function handler(
       data: checklist,
     });
   } else if (method === 'POST') {
-    await sleep();
-
     const payload: Partial<Checklist> = {
       name: body.name,
       createdAt: new Date(),
