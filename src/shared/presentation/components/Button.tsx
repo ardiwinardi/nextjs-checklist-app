@@ -12,7 +12,7 @@ type Props = {
 };
 
 export default function Button(props: Props) {
-  const { color = 'secondary' } = props;
+  const { color = 'secondary', isLoading = false } = props;
 
   return (
     <button
@@ -29,9 +29,9 @@ export default function Button(props: Props) {
         '!p-1 hover:bg-white active:bg-white': color === 'transparent',
       })}
       onClick={props.onClick}
-      disabled={props.isLoading}
+      disabled={isLoading}
     >
-      {props.isLoading ? (
+      {isLoading ? (
         <>
           <Spinner size="xs" /> &nbsp;Loading
         </>
