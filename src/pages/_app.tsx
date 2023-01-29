@@ -10,6 +10,7 @@ export default function App({ Component, pageProps }: AppProps) {
       queries: {
         cacheTime: 0,
         refetchOnWindowFocus: false,
+        retry: false,
       },
     },
   });

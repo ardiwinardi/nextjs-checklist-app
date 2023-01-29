@@ -1,4 +1,5 @@
 import { createContext, ReactElement, useEffect, useState } from 'react';
+import { toast } from 'react-toastify';
 
 type InternetConnectionContextValueProps = {
   isOnline: boolean;
@@ -30,6 +31,20 @@ export const InternetConnectionProvider = (
       window.removeEventListener('online', checkInternetConnection);
     };
   }, []);
+
+  useEffect(() => {
+    if (isOnline) {
+      toast.dismiss('error-connection');
+    } else {
+      toast.error('Not connected to the internet', {
+        autoClose: false,
+        closeButton: false,
+        closeOnClick: false,
+        toastId: 'error-connection',
+      });
+    }
+  }, [isOnline]);
+
   return (
     <InternetConnectionContext.Provider value={{ isOnline }}>
       {props.children}

@@ -36,7 +36,7 @@ export default function ChecklistItems() {
 
   return (
     <main className="px-1">
-      <ul>
+      <ul aria-label="checklist">
         {items.map((item) => {
           const isEditing = isEditItem && item.id === selectedItem?.id;
 
