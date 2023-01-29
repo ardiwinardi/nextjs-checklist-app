@@ -24,14 +24,16 @@ export default function ChecklistForm(props: Props) {
       name: target.name.value,
       isDone: false,
       createdAt: new Date(),
+      updatedAt: null,
     };
 
     if (props.item) {
       payload = {
         id: props.item.id,
+        name: target.name.value,
         isDone: props.item.isDone,
         createdAt: props.item.createdAt,
-        name: target.name.value,
+        updatedAt: new Date(),
       };
     }
 
